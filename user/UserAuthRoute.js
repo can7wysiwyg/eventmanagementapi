@@ -1,6 +1,8 @@
-const AdminRoute = require('express').Router()
-const Admin = require('../models/AdminModel')
+const UserAuthRoute = require('express').Router()
+const User = require('../models/UserModel')
 const asyncHandler = require('express-async-handler')
+const verify = require('../middleware/verify')
+const userAllow = require('../middleware/userAllow')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const cloudinary = require('cloudinary').v2
@@ -14,18 +16,5 @@ cloudinary.config({
   });
 
 
-AdminRoute.post('/admin/register', asyncHandler(async(req, res, next) => {
 
-    try {
-        
-    } catch (error) {
-        
-    }
-
-
-
-
-}) )
-
-
-module.exports = AdminRoute
+module.exports =  UserAuthRoute
