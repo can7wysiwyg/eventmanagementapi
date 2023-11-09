@@ -7,6 +7,7 @@ const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const AdminAuthRoute = require('./admin/AdminAuthRoute')
+const UserAuthRoute = require('./user/UserAuthRoute')
 
 
 mongoose.connect(process.env.MONGO_DEVT_URL)
@@ -31,7 +32,7 @@ db.once('open', function(){
   
 
 app.use(AdminAuthRoute)
-
+app.use(UserAuthRoute)
 
 app.listen(port, () => {
     console.log(`Your server is now running on port ${port}`);
