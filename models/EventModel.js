@@ -7,6 +7,11 @@ const EventSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    eventOwner: {
+        type: String,
+        required: true
+
+    },
     eventDate: {
         type: String,
         required: true
