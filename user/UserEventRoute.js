@@ -19,7 +19,7 @@ cloudinary.config({
 UserEventRoute.post('/userevent/create_event', verify, userAllow, asyncHandler(async(req, res, next) => {
 
 try {
-const {eventName, eventOwner, eventDate, eventDescription, eventPrice, eventLocation} = req.body 
+const {eventName, eventOwner, eventDate, eventDescription, eventPrice, eventLocation, catname} = req.body 
 
 if(!eventName) res.json({msg: "event name cannot be empty"})
 
@@ -32,6 +32,7 @@ if(!eventDescription) res.json({msg: "event description cannot be empty"})
 if(!eventPrice) res.json({msg: "event price cannot be empty"})
 
 if(!eventLocation) res.json({msg: "event location cannot be empty"})
+if(!catname) res.json({msg: "category name cannot be empty"})
 
 if (!req.files || !req.files.eventPoster) {
     return res.status(400).json({ message: 'No file uploaded' });
@@ -61,6 +62,7 @@ if (!req.files || !req.files.eventPoster) {
         eventDate,
         eventLocation,
         eventPrice,
+        catname,
         eventPoster: result.secure_url,
       
     });

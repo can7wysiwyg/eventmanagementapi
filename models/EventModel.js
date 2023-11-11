@@ -16,6 +16,10 @@ const EventSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    catname: {
+        type: String,
+        required: true
+},
     eventDescription: {
         type: String,
         required: true
