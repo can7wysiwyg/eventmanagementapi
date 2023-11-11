@@ -10,6 +10,8 @@ const AdminAuthRoute = require('./admin/AdminAuthRoute')
 const UserAuthRoute = require('./user/UserAuthRoute')
 const UserEventRoute = require('./user/UserEventRoute')
 const AdminCategoryRoute = require('./admin/AdminCategoryRoute')
+const PublicEventRoute = require('./public/PublicEventRoute')
+const AdminUsersRoute = require('./admin/AdminUsersRoute')
 
 
 mongoose.connect(process.env.MONGO_DEVT_URL)
@@ -37,6 +39,8 @@ app.use(AdminAuthRoute)
 app.use(UserAuthRoute)
 app.use(UserEventRoute)
 app.use(AdminCategoryRoute)
+app.use(PublicEventRoute)
+app.use(AdminUsersRoute)
 
 app.listen(port, () => {
     console.log(`Your server is now running on port ${port}`);
