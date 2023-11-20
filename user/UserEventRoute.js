@@ -189,7 +189,7 @@ try {
 }))
 
 
-UserEventRoute.delete('/userevent/update_my_event/:id', verify, userAllow, asyncHandler(async(req, res, next) => {
+UserEventRoute.delete('/userevent/delete_my_event/:id', verify, userAllow, asyncHandler(async(req, res, next) => {
 
     try {
     
@@ -224,7 +224,7 @@ UserEventRoute.delete('/userevent/update_my_event/:id', verify, userAllow, async
     
     }))
 
-    UserEventRoute.put('/userevent/update_poster', verify, userAllow, asyncHandler(async(req, res, next) => {
+    UserEventRoute.put('/userevent/update_poster/:id', verify, userAllow, asyncHandler(async(req, res, next) => {
 
 
 try {
